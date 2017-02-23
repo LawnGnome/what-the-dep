@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:400,400i,700,700i&subset=latin-ext');
+
+/* Generic styling. */
+.reveal {
+  font-family: Lato, sans-serif;
+  font-size: 5vh;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Lato, sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  code {
+    font-family: Inconsolata, monospace;
+  }
+
+  pre code {
+    font-size: 7vh;
+    line-height: 1.4;
+    max-height: 40em;
+  }
+
+  a {
+    color: #24396b;
+  }
+
+  ul {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  img {
+    max-height: 90vh;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    &.fill {
+      height: 90vh;
+    }
+  }
+
+  img.inline, a:hover img.inline {
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    width: 1em;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  a:hover img.inline {
+    opacity: 0.5;
+  }
+
+  img.logo, a:hover img.logo {
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+  }
+  a:hover img.logo {
+    opacity: 0.5;
+  }
+
+  .todo {
+    color: red !important;
+    font-weight: bold !important;
+    font-family: "Comic Sans MS", inherit !important;
+    font-size: 10vw !important;
+    text-decoration: blink !important;
+
+    &:before {
+      content: "TODO: ";
+    }
+  }
+
+  /* Background styles. */
+
+  /* Support a "translucent" background that puts the default gradient over the
+   * top. */
+  .backgrounds div[data-background-hash^="translucent"].slide-background.present {
+    opacity: 0.85;
+    background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #add9e4));
+    background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background-color: #f7fbfc;
+  }
+
+  /* Slides with specific background images have their opacity crunched down. */
+  .backgrounds .stack div[style*="background-image"].slide-background.present {
+    opacity: 0.15;
+  }
+
+  .backgrounds .stack div[style*="background-image"].slide-background.present:not([data-background-hash*="translucent"]) {
+    opacity: 1;
+  }
+
+  /* Slide specific styles. */
+}
+
+/* vim: set nocin ai et ts=2 sw=2: */
