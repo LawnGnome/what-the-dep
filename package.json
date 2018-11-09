@@ -3,7 +3,7 @@
     "build": "webpack",
     "clean": "rm -rf dist",
     "deploy": "gh-pages -d dist",
-    "start": "webpack-dev-server --progress --colors --port 4000"
+    "start": "webpack-dev-server -dw --progress --hot --colors --port 4000"
   },
   "dependencies": {
     "headjs": "^1.0.3",
