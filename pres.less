@@ -1,11 +1,59 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:400,400i,700,700i&subset=latin-ext');
+/*@import url("https://fonts.googleapis.com/css?family=Inconsolata|Lato:400,400i,700,700i&subset=latin-ext");*/
+
+/* Fonts. */
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato/Lato-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato/Lato-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato/Lato-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato/Lato-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("fonts/Inconsolata/Inconsolata-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("fonts/Inconsolata/Inconsolata-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
 
 /* Generic styling. */
 .reveal {
   font-family: Lato, sans-serif;
   font-size: 5vh;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: Lato, sans-serif;
     letter-spacing: 0;
     text-transform: none;
@@ -41,7 +89,8 @@
     }
   }
 
-  img.inline, a:hover img.inline {
+  img.inline,
+  a:hover img.inline {
     background: transparent;
     box-shadow: none;
     border: 0;
@@ -53,7 +102,8 @@
     opacity: 0.5;
   }
 
-  img.logo, a:hover img.logo {
+  img.logo,
+  a:hover img.logo {
     background: transparent;
     box-shadow: none;
     border: 0;
@@ -78,13 +128,42 @@
 
   /* Support a "translucent" background that puts the default gradient over the
    * top. */
-  .backgrounds div[data-background-hash^="translucent"].slide-background.present {
+  .backgrounds
+    div[data-background-hash^="translucent"].slide-background.present {
     opacity: 0.85;
-    background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #add9e4));
-    background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-    background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-    background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+    background: -moz-radial-gradient(
+      center,
+      circle cover,
+      #f7fbfc 0%,
+      #add9e4 100%
+    );
+    background: -webkit-gradient(
+      radial,
+      center center,
+      0px,
+      center center,
+      100%,
+      color-stop(0%, #f7fbfc),
+      color-stop(100%, #add9e4)
+    );
+    background: -webkit-radial-gradient(
+      center,
+      circle cover,
+      #f7fbfc 0%,
+      #add9e4 100%
+    );
+    background: -o-radial-gradient(
+      center,
+      circle cover,
+      #f7fbfc 0%,
+      #add9e4 100%
+    );
+    background: -ms-radial-gradient(
+      center,
+      circle cover,
+      #f7fbfc 0%,
+      #add9e4 100%
+    );
     background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
     background-color: #f7fbfc;
   }
@@ -94,7 +173,9 @@
     opacity: 0.15;
   }
 
-  .backgrounds .stack div[style*="background-image"].slide-background.present:not([data-background-hash*="translucent"]) {
+  .backgrounds
+    .stack
+    div[style*="background-image"].slide-background.present:not([data-background-hash*="translucent"]) {
     opacity: 1;
   }
 
