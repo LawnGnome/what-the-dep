@@ -6,7 +6,7 @@ export default {
   entry: "./index.js",
   output: {
     path: resolve(__dirname, "dist"),
-    publicPath: "/PRES-NAME/",
+    publicPath: "/what-the-dep/",
     filename: "pres.js"
   },
   mode: "development",
