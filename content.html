@@ -187,19 +187,81 @@
 						<div class="todo">content</div>
 						<aside class="notes">
 							With some refinement, <code>vgo</code> was quickly (and rather
-							controversially) adopted by the Go team, and shipped as an
-							experimental feature in Go 1.11 in August, this time as the
-							<code>go mod</code> family of commands. In Go 1.12, it will no
-							longer be experimental, and will become the officially blessed
-							solution.
+							controversially) adopted by the Go team, and shipped as a
+							nominally experimental feature in Go 1.11 in August, this time as
+							the <code>go mod</code> family of commands. In Go 1.12, it will
+							no longer be experimental, and will become the officially blessed
+							solution. Now is a good time to get on board.
 						</aside>
 					</section>
 
 					<section id="">
 						<div class="todo">content</div>
 						<aside class="notes">
-							So this is what you should learn. And this is what I'm now going
-							to demonstrate, if the demo gods are kind.
+							So, now is a good time to get on board. Let's talk a little about
+							the practicalities of using <code>go mod</code>, and then we'll
+							get into a few demos.
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							As mentioned a minute ago, the key is that you have a
+							<code>go.mod</code> file at the root of your project. This is
+							roughly equivalent to, say, a <code>package.json</code>: it
+							contains the canonical import path for your project, and its
+							dependency rules.
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							Generally speaking, you create it using <code>go mod init</code>,
+							but they are human readable and writable. It uses its own special
+							syntax because of course it does, but it's not terribly hard to
+							understand, and it kind of looks like an <code>import</code>
+							block if you turn your head and squint a bit.
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							Another way in which <code>go mod</code> differs is that it
+							doesn't use lock files: because of the way MVS works, it should
+							always generate the same set of versions for the same inputs,
+							even if newer versions have been released. There is a
+							<code>go.sum</code> file which is recommended to be committed,
+							but it only contains checksums to prevent shenanigans.
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							The final thing to know is that you are <em>absolutely</em>
+							opting in to semantic versioning. In practice, the Go ecosystem
+							is new enough that this isn't generally a huge concern: most
+							things do use semver, but <code>go mod</code> makes numerous
+							assumptions that semver is in fact in use. So if you're writing a
+							library, factor that in.
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							If the demo gods are kind today, let's look at a few examples.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
 						</aside>
 					</section>
 				</section>
