@@ -259,9 +259,71 @@
 				</section>
 
 				<section>
-					<section id="">
-						<div class="todo">content</div>
+					<section id="new-project">
+						<pre><code class="sh" data-trim>
+$ go mod init github.com/LawnGnome/example
+go: creating new go.mod: module github.com/LawnGnome/example
+$ cat go.mod
+module github.com/LawnGnome/example
+						</code></pre>
 						<aside class="notes">
+							Starting a new project is easy: you run <code>go mod init</code>.
+							If you don't already have a <code>.git</code> directory, you can
+							provide the import path as a parameter.
+						</aside>
+					</section>
+
+					<section id="existing-project">
+						<pre><code class="sh" data-trim>
+$ go mod init
+go: creating new go.mod: module github.com/aecerbot/gpsd
+go: copying requirements from glide.lock
+$ go build
+go: finding github.com/golang/protobuf v0.0.0-20160930204858-df1d3ca07d2d
+go: finding github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e
+go: finding github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb
+go: finding golang.org/x/sys v0.0.0-20161023150541-c200b10b5d5e
+go: finding gopkg.in/bugst/go-serial.v1 v1.0.0-20161022203751-04302f262ca3
+go: finding gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a
+go: finding gopkg.in/redis.v4 v4.2.3
+go: downloading github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb
+go: downloading github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e
+go: downloading gopkg.in/redis.v4 v4.2.3
+go: downloading github.com/golang/protobuf v0.0.0-20160930204858-df1d3ca07d2d
+go: downloading gopkg.in/bugst/go-serial.v1 v1.0.0-20161022203751-04302f262ca3
+go: downloading gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a
+						</code></pre>
+						<aside class="notes">
+							Let's say you have an existing project. <code>go mod init</code>
+							will try fairly hard to intuit your existing dependencies. If you
+							have metadata for dep, or Glide, or a bunch of other first
+							generation tools, these will be parsed and a new
+							<code>go.mod</code> will be generated.
+						</aside>
+					</section>
+
+					<section id="new-clone">
+						<pre><code class="sh" data-trim>
+$ go build
+go: finding github.com/golang/protobuf v0.0.0-20160930204858-df1d3ca07d2d
+go: finding github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e
+go: finding github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb
+go: finding golang.org/x/sys v0.0.0-20161023150541-c200b10b5d5e
+go: finding gopkg.in/bugst/go-serial.v1 v1.0.0-20161022203751-04302f262ca3
+go: finding gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a
+go: finding gopkg.in/redis.v4 v4.2.3
+go: downloading github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb
+go: downloading github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e
+go: downloading gopkg.in/redis.v4 v4.2.3
+go: downloading github.com/golang/protobuf v0.0.0-20160930204858-df1d3ca07d2d
+go: downloading gopkg.in/bugst/go-serial.v1 v1.0.0-20161022203751-04302f262ca3
+go: downloading gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a
+						</code></pre>
+						<aside class="notes">
+							For a newly cloned project with a <code>go.mod</code> and
+							<code>go.sum</code>, this is even easier: <code>go build</code>
+							will build you a binary straight up, retrieving whatever is
+							required on the fly.
 						</aside>
 					</section>
 				</section>

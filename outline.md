@@ -90,6 +90,8 @@
 
 ## Examples
 
+### New project
+
 ### Existing project
 
 - `go mod init` performs a bunch of magic to try to migrate existing dependency

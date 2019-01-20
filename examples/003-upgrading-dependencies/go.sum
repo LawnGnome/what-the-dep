@@ -1,0 +1,13 @@
+github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb h1:YJh1XZFsznh9K903A6JJESHBJ8fFvxRbwzhB5mf7JHs=
+github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb/go.mod h1:4PYBXSz3NrskMK11M5JXe5Nq+WvxcMGRUNm738YWUN0=
+github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e h1:25i4w1AItXoUaFUwQRPB51eL0pPVuLtnhPkfIS/zTIA=
+github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e/go.mod h1:ssCa9Qb6kV2+IMyqDp+PbpFd+jWzcp4O/onMDLRc6VE=
+github.com/golang/protobuf v0.0.0-20160930204858-df1d3ca07d2d h1:THgtaeKocdlJrzf0jwy5JNrYAk+YObQ/I5Rdmsvrxto=
+github.com/golang/protobuf v0.0.0-20160930204858-df1d3ca07d2d/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
+golang.org/x/sys v0.0.0-20161023150541-c200b10b5d5e/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
+gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a h1:stTHdEoWg1pQ8riaP5ROrjS6zy6wewH/Q2iwnLCQUXY=
+gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a/go.mod h1:KF9sEfUPAXdG8Oev9e99iLGnl2uJMjc5B+4y3O7x610=
+gopkg.in/bugst/go-serial.v1 v1.0.0-20161022203751-04302f262ca3 h1:zx7d/z1ieptf1ANFdBmIuPPJiiDd+/uz9vJJL3bb/OA=
+gopkg.in/bugst/go-serial.v1 v1.0.0-20161022203751-04302f262ca3/go.mod h1:jNKggPePtSsutLgoV9/5mdw6F5Cc/+IPc9iv6aLxGoc=
+gopkg.in/redis.v4 v4.2.3 h1:0s27sbgN3FDHgaBtOme2JBab/AormYY7wQpFR1z8JMw=
+gopkg.in/redis.v4 v4.2.3/go.mod h1:8KREHdypkCEojGKQcjMqAODMICIVwZAONWq8RowTITA=
