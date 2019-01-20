@@ -136,8 +136,7 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="ruh-roh">
-						<div class="todo">content</div>
+					<section id="ruh-roh" data-background="images/storm.jpg">
 						<aside class="notes">
 							You will note that I'm using the past tense here. Because before
 							<code>dep</code> became the standard tool, something else
@@ -146,9 +145,8 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 					</section>
 				</section>
 
-				<section>
-					<section id="">
-						<div class="todo">content</div>
+				<section data-background="images/gopher.jpg">
+					<section id="new-survey-monkey" data-background="images/2017.png">
 						<aside class="notes">
 							This brings us to 2018. By this point, the 2017 Go survey had
 							happened, and for the first time, dependency management wasn't
@@ -157,8 +155,7 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="vgo-emerges" data-background="images/vgo.png">
 						<aside class="notes">
 							Russ Cox, on the Go team, had been dissatisfied with the
 							direction of <code>dep</code>, and instead proposed a tool called
@@ -166,8 +163,7 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="mvs" data-background="images/mvs.png">
 						<aside class="notes">
 							<code>vgo</code> was a more radical proposal. Firstly, it got rid
 							of the NP-complete resolution issue by sidestepping the idea of
@@ -177,8 +173,7 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="no-more-gopath-ish" data-background="images/tree.png">
 						<aside class="notes">
 							Secondly, <code>vgo</code> mostly got rid of the idea of
 							<code>$GOPATH</code> for most developers. It still exists, but in
@@ -188,8 +183,7 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="go-mod-announcement" data-background="images/gomod.png">
 						<aside class="notes">
 							With some refinement, <code>vgo</code> was quickly (and rather
 							controversially) adopted by the Go team, and shipped as a
@@ -200,8 +194,7 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="practicalities">
 						<aside class="notes">
 							So, now is a good time to get on board. Let's talk a little about
 							the practicalities of using <code>go mod</code>, and then we'll
@@ -209,8 +202,11 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="go-mod" data-background="translucent">
+						<pre><code class="sh" data-trim>
+$ ls -l go.mod
+-rw-r--r-- 1 adam adam 443 Jan 20 18:37 go.mod
+						</code></pre>
 						<aside class="notes">
 							As mentioned a minute ago, the key is that you have a
 							<code>go.mod</code> file at the root of your project. This is
@@ -220,8 +216,21 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="go-mod-cat" data-background="translucent">
+						<pre><code class="sh" data-trim>
+$ cat go.mod
+module github.com/aecerbot/gpsd
+
+require (
+        github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb
+        github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e
+        github.com/golang/protobuf v0.0.0-20160930204858-df1d3ca07d2d
+        golang.org/x/sys v0.0.0-20161023150541-c200b10b5d5e
+        gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a
+        gopkg.in/bugst/go-serial.v1 v1.0.0-20161022203751-04302f262ca3
+        gopkg.in/redis.v4 v4.2.3
+)
+						</code></pre>
 						<aside class="notes">
 							Generally speaking, you create it using <code>go mod init</code>,
 							but they are human readable and writable. It uses its own special
@@ -231,8 +240,15 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="go-sum" data-background="translucent">
+						<pre><code class="sh" data-trim>
+$ head -5 go.sum
+github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb h1:YJh1XZFsznh9K903A6JJESHBJ8fFvxRbwzhB5mf7JHs=
+github.com/adrianmo/go-nmea v0.0.0-20150824134349-c5f07dff7cbb/go.mod h1:4PYBXSz3NrskMK11M5JXe5Nq+WvxcMGRUNm738YWUN0=
+github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e h1:25i4w1AItXoUaFUwQRPB51eL0pPVuLtnhPkfIS/zTIA=
+github.com/aecerbot/protocols v0.0.0-20161004060151-282bc827067e/go.mod h1:ssCa9Qb6kV2+IMyqDp+PbpFd+jWzcp4O/onMDLRc6VE=
+github.com/golang/protobuf v0.0.0-20160930204858-df1d3ca07d2d h1:THgtaeKocdlJrzf0jwy5JNrYAk+YObQ/I5Rdmsvrxto=
+						</code></pre>
 						<aside class="notes">
 							Another way in which <code>go mod</code> differs is that it
 							doesn't use lock files: because of the way MVS works, it should
@@ -243,8 +259,7 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="semver">
 						<aside class="notes">
 							The final thing to know is that you are <em>absolutely</em>
 							opting in to semantic versioning. In practice, the Go ecosystem
@@ -255,8 +270,7 @@ $ GO15VENDOREXPERIMENT=1 go get ...
 						</aside>
 					</section>
 
-					<section id="">
-						<div class="todo">content</div>
+					<section id="pre-demo">
 						<aside class="notes">
 							If the demo gods are kind today, let's look at a few examples.
 						</aside>
@@ -379,7 +393,10 @@ index 43af25d..5f12c0c 100644
 					</section>
 
 					<section id="releasing-a-project">
-						<div class="todo">content</div>
+						<pre><code class="sh" data-trim>
+$ git tag v1.2.3
+$ git push --tags
+						</code></pre>
 						<aside class="notes">
 							Finally, I was going to demo releasing a project, but it's
 							actually pretty uninteresting, which I guess is the point. Tag
