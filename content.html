@@ -23,6 +23,187 @@
 					</aside>
 				</section>
 
+				<section>
+					<section id="prehistory">
+						<div class="todo">content</div>
+						<aside class="notes">
+							Five years from now, you probably won't need to know any history.
+							Unfortunately, right now, to understand where we're at, you need
+							a little bit of background in how Go got there.
+						</aside>
+					</section>
+
+					<section id="gopath">
+						<div class="todo">content</div>
+						<aside class="notes">
+							The zeroth generation of dependency management in Go was
+							essentially not having dependency management: you had
+							<code>go get</code> to download the current master of whatever
+							package you were depending on, and you had to keep everything in
+							a `$GOPATH`, which would generally be a single workspace for all
+							your projects.
+						</aside>
+					</section>
+
+					<section id="gopkg">
+						<div class="todo">content</div>
+						<aside class="notes">
+							While there were some interesting hacks for things like gopkg.in
+							to try to pin to a version, they weren't generally useful, since
+							libraries had to set up their import paths to only use gopkg.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section id="clone-wars">
+						<div class="todo">content</div>
+						<aside class="notes">
+							This situation wasn't really tenable for anyone who actually had
+							dependencies, so a set of competing first generation tools sprung
+							up to implement package and vendor management to varying degrees.
+						</aside>
+					</section>
+
+					<section id="glide">
+						<div class="todo">content</div>
+						<aside class="notes">
+							Those with ambitions of being the standard package manager
+							generally mimicked other languages: Glide, for example,
+							explicitly called out Cargo, NPM, Composer, and a few others as
+							direct inspirations.
+						</aside>
+					</section>
+
+					<section id="vendor">
+						<div class="todo">content</div>
+						<aside class="notes">
+							The Go team did take some note: Go 1.5 shipped with a vendor
+							experiment in 2015, which allowed you (or your tool) to set up
+							vendor directories with special import resolution rules, which
+							made things a little better.
+						</aside>
+					</section>
+
+					<section id="too-many-cooks">
+						<div class="todo">content</div>
+						<aside class="notes">
+							Nevertheless, there were a couple of issues. One was `$GOPATH`
+							itself: even with vendor support, managing dependencies for
+							multiple projects within a single workspace wasn't always easy.
+							And there were honestly too many alternatives, each with their
+							own metadata format, tagging expectations, and with none of them
+							really getting the care and attention needed to get them to
+							acceptable quality levels.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section id="survey-monkey">
+						<div class="todo">content</div>
+						<aside class="notes">
+							For years, the biggest problem noted in the Go developer survey
+							was dependency management. That set of first generation tools
+							helped a little, but didn't really move the needle.
+						</aside>
+					</section>
+
+					<section id="dep">
+						<div class="todo">content</div>
+						<aside class="notes">
+							Sam Boyer went off and did lots of research and came up with a
+							design for a tool that he called <code>dep</code>. It was
+							developed with the explicit intention of being the official tool
+							for Go, shipped with the language tooling.
+						</aside>
+					</section>
+
+					<section id="dep-integration">
+						<div class="todo">content</div>
+						<aside class="notes">
+							As a result, it integrated with existing features: it relied on
+							<code>$GOPATH</code> so as not to disrupt existing workflows. At
+							the same time, though, it looked recognisable to users familiar
+							with other languages' package managers: there were separate
+							install/update steps, and dependency resolution used the same
+							general SAT solver approach everyone else uses.
+						</aside>
+					</section>
+
+					<section id="ruh-roh">
+						<div class="todo">content</div>
+						<aside class="notes">
+							You will note that I'm using the past tense here. Because before
+							<code>dep</code> became the standard tool, something else
+							happened.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							This brings us to 2018. By this point, the 2017 Go survey had
+							happened, and for the first time, dependency management wasn't
+							the top pain point. (It was generics, which in fairness had
+							always been a close second.)
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							Russ Cox, on the Go team, had been dissatisfied with the
+							direction of <code>dep</code>, and instead proposed a tool called
+							<code>vgo</code> in a series of essays.
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							<code>vgo</code> was a more radical proposal. Firstly, it got rid
+							of the NP-complete resolution issue by sidestepping the idea of
+							trying to solve package dependency graphs altogether, and instead
+							working backwards from minimum requirements with something Russ
+							called "Minimal Version Selection".
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							Secondly, <code>vgo</code> mostly got rid of the idea of
+							<code>$GOPATH</code> for most developers. It still exists, but in
+							practice, you now have a workspace per project ("module") with a
+							<code>go.mod</code> file at its root, which would act as the
+							effective <code>$GOPATH</code> root.
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							With some refinement, <code>vgo</code> was quickly (and rather
+							controversially) adopted by the Go team, and shipped as an
+							experimental feature in Go 1.11 in August, this time as the
+							<code>go mod</code> family of commands. In Go 1.12, it will no
+							longer be experimental, and will become the officially blessed
+							solution.
+						</aside>
+					</section>
+
+					<section id="">
+						<div class="todo">content</div>
+						<aside class="notes">
+							So this is what you should learn. And this is what I'm now going
+							to demonstrate, if the demo gods are kind.
+						</aside>
+					</section>
+				</section>
+
 				<section id="thanks">
 					<h2>Questions?</h2>
 					<aside class="notes">
