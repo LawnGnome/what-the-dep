@@ -90,4 +90,25 @@
 
 ## Examples
 
+### Existing project
 
+- `go mod init` performs a bunch of magic to try to migrate existing dependency
+  metadata (including `dep`, Glide, and a bunch of others) and to use your Git
+  remote set up to try to intuit your module path
+  - Use gpsd as an example
+- Set up an example with no metadata
+
+### New clone
+
+- Because it's Go, there's no real separate fetch step: just `go build` or
+  `go install` and it'll fetch whatever `go.mod` tells it to
+
+### Upgrading dependencies
+
+- `go get -u` now takes version numbers with `@x.y.z` suffixes
+
+### Releasing a project
+
+- Must be semver
+- Must use the `vgo` tagging rules: versions must be tagged with `vX.Y.Z` and
+  not `X.Y.Z`, which is mildly annoying if you were doing it the other way
