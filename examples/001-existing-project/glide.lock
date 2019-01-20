@@ -1,0 +1,35 @@
+hash: c951de8a1f67b247a95ee2a1df82d6c11c6b796ff287663e0000bc5314916527
+updated: 2016-10-29T22:54:15.195204099Z
+imports:
+- name: github.com/adrianmo/go-nmea
+  version: c5f07dff7cbb4b0baca8dad6abac3cb78e3daa69
+- name: github.com/aecerbot/protocols
+  version: 282bc827067e926ebc2162e90de99b773d4c53a4
+  subpackages:
+  - src/protocols
+- name: github.com/golang/protobuf
+  version: df1d3ca07d2d07bba352d5b73c4313b4e2a6203e
+  subpackages:
+  - proto
+  - ptypes
+  - ptypes/any
+  - ptypes/duration
+  - ptypes/timestamp
+- name: golang.org/x/sys
+  version: c200b10b5d5e122be351b67af224adc6128af5bf
+  subpackages:
+  - windows
+- name: gopkg.in/bsm/ratelimit.v1
+  version: db14e161995a5177acef654cb0dd785e8ee8bc22
+- name: gopkg.in/bugst/go-serial.v1
+  version: 04302f262ca3879de7bba554937f21805e65d8a3
+- name: gopkg.in/redis.v4
+  version: 8a8d997ad58dc600d2ff0f64914102192f3b51ac
+  subpackages:
+  - internal
+  - internal/consistenthash
+  - internal/errors
+  - internal/hashtag
+  - internal/pool
+  - internal/proto
+testImports: []

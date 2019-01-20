@@ -1,0 +1,8 @@
+package: .
+import:
+- package: github.com/adrianmo/go-nmea
+- package: github.com/aecerbot/protocols
+- package: github.com/golang/protobuf
+- package: gopkg.in/bugst/go-serial.v1
+- package: gopkg.in/redis.v4
+  version: ^4.2.1
