@@ -23,9 +23,8 @@
 					</aside>
 				</section>
 
-				<section>
+				<section data-background="images/prehistory.jpg">
 					<section id="prehistory">
-						<div class="todo">content</div>
 						<aside class="notes">
 							Five years from now, you probably won't need to know any history.
 							Unfortunately, right now, to understand where we're at, you need
@@ -33,8 +32,17 @@
 						</aside>
 					</section>
 
-					<section id="gopath">
-						<div class="todo">content</div>
+					<section id="gopath" data-background="translucent">
+						<pre><code class="sh" data-trim>
+$ go get -u github.com/newrelic/go-agent
+$ ls $GOPATH/src/github.com/newrelic/go-agent/
+application.go   CONTRIBUTING.md     _integrations                internal_config_test.go             internal_set_web_request_test.go  internal_txn_test.go  version.go
+attributes.go    datastore.go        internal                     internal_context_test.go            internal_slow_queries_test.go     LICENSE.txt
+CHANGELOG.md     errors.go           internal_app.go              internal_cross_process_test.go      internal_span_events_test.go      log.go
+config.go        examples            internal_attributes_test.go  internal_distributed_trace_test.go  internal_synthetics_test.go       README.md
+context.go       GUIDE.md            internal_benchmark_test.go   internal_errors_test.go             internal_test.go                  segments.go
+context_stub.go  instrumentation.go  internal_config.go           internal_response_writer.go         internal_txn.go                   transaction.go
+						</code></pre>
 						<aside class="notes">
 							The zeroth generation of dependency management in Go was
 							essentially not having dependency management: you had
@@ -45,8 +53,7 @@
 						</aside>
 					</section>
 
-					<section id="gopkg">
-						<div class="todo">content</div>
+					<section id="gopkg" data-background="images/gopkg.png">
 						<aside class="notes">
 							While there were some interesting hacks for things like gopkg.in
 							to try to pin to a version, they weren't generally useful, since
@@ -55,9 +62,8 @@
 					</section>
 				</section>
 
-				<section>
+				<section data-background="images/weeds.jpg">
 					<section id="clone-wars">
-						<div class="todo">content</div>
 						<aside class="notes">
 							This situation wasn't really tenable for anyone who actually had
 							dependencies, so a set of competing first generation tools sprung
@@ -65,8 +71,7 @@
 						</aside>
 					</section>
 
-					<section id="glide">
-						<div class="todo">content</div>
+					<section id="glide" data-background="images/glide.png">
 						<aside class="notes">
 							Those with ambitions of being the standard package manager
 							generally mimicked other languages: Glide, for example,
@@ -75,8 +80,10 @@
 						</aside>
 					</section>
 
-					<section id="vendor">
-						<div class="todo">content</div>
+					<section id="vendor" data-background="translucent">
+						<pre><code class="sh" data-trim>
+$ GO15VENDOREXPERIMENT=1 go get ...
+						</code></pre>
 						<aside class="notes">
 							The Go team did take some note: Go 1.5 shipped with a vendor
 							experiment in 2015, which allowed you (or your tool) to set up
@@ -86,7 +93,6 @@
 					</section>
 
 					<section id="too-many-cooks">
-						<div class="todo">content</div>
 						<aside class="notes">
 							Nevertheless, there were a couple of issues. One was `$GOPATH`
 							itself: even with vendor support, managing dependencies for
@@ -100,17 +106,17 @@
 				</section>
 
 				<section>
-					<section id="survey-monkey">
-						<div class="todo">content</div>
+					<section id="survey-monkey" data-background="images/2016.png">
 						<aside class="notes">
 							For years, the biggest problem noted in the Go developer survey
 							was dependency management. That set of first generation tools
-							helped a little, but didn't really move the needle.
+							helped a little, but didn't really move the needle. This is a
+							snippet of the 2016 survey results: the grouping was honestly
+							pretty poor, but you get the general idea.
 						</aside>
 					</section>
 
-					<section id="dep">
-						<div class="todo">content</div>
+					<section id="dep" data-background="images/dep.png">
 						<aside class="notes">
 							Sam Boyer went off and did lots of research and came up with a
 							design for a tool that he called <code>dep</code>. It was
@@ -119,8 +125,7 @@
 						</aside>
 					</section>
 
-					<section id="dep-integration">
-						<div class="todo">content</div>
+					<section id="dep-integration" data-background="images/dep.png">
 						<aside class="notes">
 							As a result, it integrated with existing features: it relied on
 							<code>$GOPATH</code> so as not to disrupt existing workflows. At
