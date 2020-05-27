@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "headjs": "^1.0.3",
-    "reveal.js": "^3.7.0"
+    "reveal.js": "^3.9.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
